@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Story Quiz App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="header-brand">
+        <div class="brand-mark">📚</div>
+        <h1>Story Quiz App 🎉</h1>
+      </div>
+      <nav class="nav-tabs">
+        <button type="button" class="tab-button active" data-page="home">HOME</button>
+        <button type="button" class="tab-button" data-page="story">STORY</button>
+        <button type="button" class="tab-button" data-page="quiz">QUIZ</button>
+        <button type="button" class="tab-button" data-page="result">RESULT</button>
+        <button type="button" class="tab-button" data-page="logout">LOGOUT</button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HOME PAGE -->
+      <section id="homePage" class="page-section active">
+        <div class="hero-card">
+          <h2>Welcome to the Quiz App 🎉</h2>
+          <p>Pick your favorite story, read it, and test your knowledge with fun questions!</p>
+          <button id="startLearningBtn" class="primary-button">Start Learning</button>
+        </div>
+      </section>
+
+      <!-- STORY PAGE (List) -->
+      <section id="storyPage" class="page-section hidden">
+        <div class="section-header">
+          <h2>Choose Your Story</h2>
+          <p>Pick a story to read and learn something amazing!</p>
+        </div>
+        <div id="storyList" class="story-cards-grid"></div>
+      </section>
+
+      <!-- STORY DETAILS PAGE -->
+      <section id="storyDetailsPage" class="page-section hidden">
+        <div class="story-details-container">
+          <div class="story-header">
+            <span id="storyIcon" class="story-emoji">📖</span>
+            <h2 id="detailsTitle">Story Title</h2>
+          </div>
+          <div id="storyContent" class="story-content">
+            <!-- Story content will be inserted here -->
+          </div>
+          <button id="startQuizBtn" class="primary-button">Start Quiz</button>
+        </div>
+      </section>
+
+      <!-- QUIZ PAGE -->
+      <section id="quizPage" class="page-section hidden">
+        <div class="quiz-container">
+          <div class="quiz-header">
+            <p class="quiz-title" id="quizTitle">Story Quiz</p>
+            <div class="progress-bar">
+              <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <p class="progress-text"><span id="questionNum">1</span> of <span id="totalQuestions">5</span></p>
+          </div>
+
+          <div class="question-container">
+            <h3 id="questionText">Question will appear here</h3>
+            <div id="optionsGrid" class="options-grid"></div>
+          </div>
+
+          <div class="quiz-footer">
+            <p id="feedbackMsg" class="feedback-msg">Select an answer</p>
+            <button id="nextQuizBtn" class="primary-button" disabled>Next</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULT PAGE -->
+      <section id="resultPage" class="page-section hidden">
+        <div class="result-container">
+          <div class="result-badge" id="resultBadge">⭐</div>
+          <h2 id="scoreText">You Scored 0/5</h2>
+          <p id="resultMsg">Great effort! Keep learning.</p>
+          <div class="result-buttons">
+            <button id="retryBtn" class="primary-button">Retry Quiz</button>
+            <button id="goHomeBtn" class="secondary-button">Go Home</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
